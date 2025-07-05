@@ -1,37 +1,37 @@
 import { PALAVRAS_RUINS } from "./palavrasRuins.js";
 
-const botao = document.getElementById("botao-palavrachave");
-const entrada = document.getElementById("entrada-de-texto");
-const resultado = document.getElementById("resultado-palavrachave");
+const inputText = document.getElementById("input-text");
+const btnAnalyze = document.getElementById("btn-analyze");
+const outputResult = document.getElementById("output-result");
 
-botao.addEventListener("click", () => {
-  const texto = entrada.value.trim();
+btnAnalyze.addEventListener("click", () => {
+  const texto = inputText.value.trim();
+
   if (!texto) {
-    resultado.textContent = "Digite algo para analisar!";
+    outputResult.textContent = "Digite algo para analisar!";
     return;
   }
 
   const palavras = texto
     .toLowerCase()
-    .split(/\P{L}+/u)
+    .split(/[^a-zá-úà-ü]+/i)
     .filter(p => p.length > 2 && !PALAVRAS_RUINS.has(p));
 
-  const frequencia = {};
-
-  for (const palavra of palavras) {
-    frequencia[palavra] = (frequencia[palavra] || 0) + 1;
-  }
-
-  const topPalavras = Object.entries(frequencia)
-    .sort((a, b) => b[1] - a[1])
-    .slice(0, 10);
-
-  if (topPalavras.length === 0) {
-    resultado.textContent = "Nenhuma palavra relevante encontrada.";
+  if (palavras.length === 0) {
+    outputResult.textContent = "Nenhuma palavra relevante encontrada.";
     return;
   }
 
-  resultado.innerHTML = topPalavras
+  const frequencia = {};
+  for (const p of palavras) {
+    frequencia[p] = (frequencia[p] || 0) + 1;
+  }
+
+  const ordenado = Object.entries(frequencia)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 10);
+
+  outputResult.innerHTML = ordenado
     .map(([palavra, contagem]) => `🔹 <strong>${palavra}</strong> (${contagem}x)`)
     .join("<br>");
 });
