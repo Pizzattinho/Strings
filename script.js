@@ -1,11 +1,19 @@
-const botaoMostraPalavras = document.querySelector('#botao-palavrachave');
+import { PALAVRAS_RUINS } from "./palavrasRuins.js";
 
-botaoMostraPalavras.addEventListener('click', mostraPalavrasChave);
+const botao = document.getElementById("botao-palavrachave");
+const entrada = document.getElementById("entrada-de-texto");
+const resultado = document.getElementById("resultado-palavrachave");
 
-function mostraPalavrasChave() {
-    const texto = document.querySelector('#entrada-de-texto').value;
-    const campoResultado = document.querySelector('#resultado-palavrachave');
-    const palavras = texto.split(" ");
-    
-    campoResultado.textContent = palavras.join(', ');
-}
+botao.addEventListener("click", () => {
+  const texto = entrada.value.trim();
+  if (!texto) {
+    resultado.textContent = "Digite algo para analisar!";
+    return;
+  }
+
+  const palavras = texto
+    .toLowerCase()
+    .split(/\P{L}+/u)
+    .filter(p => p.length > 2 && !PALAVRAS_RUINS.has(p));
+
+  const frequencia = {};
