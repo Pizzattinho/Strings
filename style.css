@@ -38,3 +38,56 @@ body {
     align-items: center;
     gap: 2rem;
 }
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--cor-secundaria);
+    text-align: center;
+    text-transform: none;
+}
+
+#entrada-de-texto {
+    width: 100%;
+    min-height: 10rem;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    border: 2px solid var(--cor-primaria);
+    font-size: 1.2rem;
+    background-color: #f8fafc;
+    color: var(--cor-texto);
+    resize: none;
+}
+
+#entrada-de-texto::placeholder {
+    color: #94a3b8;
+}
+
+#botao-palavrachave {
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 0.75rem;
+    background-color: var(--cor-primaria);
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-weight: 600;
+}
+
+#botao-palavrachave:hover {
+    background-color: #0ea5e9;
+}
+
+#resultado-palavrachave {
+    margin-top: 1rem;
+    padding: 1rem;
+    width: 100%;
+    border-radius: 0.75rem;
+    background-color: #e0f2fe;
+    color: var(--cor-secundaria);
+    font-size: 1.5rem;
+    text-align: center;
+    max-height: 250px;
+    overflow-y: auto;
+}
