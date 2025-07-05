@@ -1,21 +1,31 @@
 <!DOCTYPE html>
-<html lang="pt-BT">
+<html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Extrator de Palavras-Chave</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Palavras Inteligentes</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-    <div class="container">
-        <h1>Extrator de palavras-chave</h1>
-        <textarea id="entrada-de-texto" placeholder="Digite ou cole seu texto aqui..."></textarea>
-        <button id="botao-palavrachave">Extrair</button>
-        <div id="resultado-palavrachave"></div>
-    </div>
-    <script src="script.js"></script>
-</body>
+  <header>
+    <h1>💡 Palavras Inteligentes</h1>
+    <p class="subtitle">Cole seu texto para descobrir as palavras mais frequentes.</p>
+  </header>
 
-</html>
+  <main class="main-container">
+    <section class="input-section">
+      <textarea id="input-text" placeholder="Digite seu texto aqui..."></textarea>
+    </section>
+
+    <section class="result-section">
+      <div id="output-result" class="result-box">Resultado aparecerá aqui</div>
+    </section>
+  </main>
+
+  <div class="button-container">
+    <button id="btn-analyze">Analisar</button>
+  </div>
+
+  <script type="
