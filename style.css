@@ -1,90 +1,40 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
 :root {
-    --cor-destaque: #ffffff;
-    --cor-gradiente-preto: linear-gradient(113deg, #e3158d 0%, #530731 44.96%, #92102c 100%);
+    --cor-primaria: #38bdf8;
+    --cor-secundaria: #0f172a;
+    --cor-fundo: #f1f5f9;
+    --cor-branca: #ffffff;
+    --cor-texto: #1e293b;
+    --sombra: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 * {
     margin: 0;
     padding: 0;
-    font-family: "Oswald", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 500;
-  font-style: normal;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 16px 21px 18px 21px;
-    background: var(--cor-gradiente-preto);
-    height: 100vh;
+    padding: 20px;
+    min-height: 100vh;
+    background-color: var(--cor-fundo);
     flex-direction: column;
 }
-
 
 .container {
+    background-color: var(--cor-branca);
+    border-radius: 1rem;
+    box-shadow: var(--sombra);
+    padding: 3rem;
+    width: 100%;
+    max-width: 800px;
     display: flex;
-    width: 65rem;
     flex-direction: column;
     align-items: center;
-    gap: 3rem;
-    overflow: hidden;
-}
-
-h1 {
-    color: var(--cor-destaque);
-    text-align: center;
-    font-size: 2.8rem;
-    font-weight: 600;
-    text-transform: uppercase;
-}
-
-#entrada-de-texto {
-    display: flex;
-    height: 12rem;
-    padding: 1.4rem 2.5rem 2.5rem 2.5rem;
-    align-items: flex-start;
-    gap: 0.625rem;
-    align-self: stretch;
-    border-radius: 0.625rem;
-    background: #FFF;
-    font-size: 2rem;
-}
-
-#entrada-de-texto::placeholder {
-    color: #828282;
-    font-size: 2rem;
-    font-weight: 400;
-    line-height: normal;
-}
-
-#botao-palavrachave {
-    display: flex;
-    padding: 1.25rem;
-    justify-content: center;
-    align-items: center;
-    gap: 0.625rem;
-    border-radius: 0.5rem;
-    border: none;
-    background: var(--cor-destaque);
-    color: #000;
-    font-size: 2.5rem;
-    font-weight: 500;
-    line-height: normal;
-}
-
-#resultado-palavrachave {
-    display: flex;
-    border-radius: 0.625rem;
-    align-self: stretch;
-    color: var(--cor-destaque);
-    font-size: 2.5rem;
-    justify-content: center;
-    margin-bottom: 2rem;
-    max-width: 100%;
-    max-height: 50vh;
-    overflow: auto;
+    gap: 2rem;
 }
